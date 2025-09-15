@@ -1,32 +1,32 @@
-# QuecPython Xiaozhi AI Chatbot Based on MQTT + UDP
+# QuecPython基于MQTT＋UDP的小智 AI 聊天机器人
 
-## Table of Contents
+## 目录
 
-- [Introduction](#introduction)
-- [Repository Structure](#repository-structure)
-- [Solution Framework](#solution-framework)
-- [Features](#features)
-- [Quick Start](#Quick Start)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Run the Application](#run-the-application)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support](#support)
+- [介绍](#介绍)
+- [仓库目录](#仓库目录)
+- [方案框架](#方案框架)
+- [功能特性](#功能特性)
+- [快速开始](#快速开始)
+  - [先决条件](#先决条件)
+  - [安装](#安装)
+  - [运行应用程序](#运行应用程序)
+- [贡献](#贡献)
+- [许可证](#许可证)
+- [支持](#支持)
 
-## Introduction
+## 介绍
 
-QuecPython has launched the Xiaozhi platform AI chatbot solution (mqtt+udp version). This solution is based on the mqtt protocol + udp protocol, featuring cross-platform compatibility and can be applied to most QuecPython modules.
+QuecPython 推出了小智平台 AI 聊天机器人解决方案mqtt+udp版本。该方案基于 mqtt协议+udp协议，具有跨平台特性，可以适用于大部分 QuecPython 模组。
 
-This case uses an AI development board equipped with the EC800MCNLE module.
+本案例采用搭载 EC800MCNLE 模组的 AI 开发板。
 
-## Repository Structure
+## 仓库目录
 
 ```plaintext
 solution-xiaozhiAI_mqtt&udp/
 ├── fw/
 	├── EC800MCNLER06A01M08_OCPU_QPY_TEST0810.zip       --------- firmware
-├── media/                                              --------- pictures 
+├── media/                                              --------- picture 
 │   ├── connection.png
 │   └── ......
 ├── src/												--------- code
@@ -37,92 +37,90 @@ solution-xiaozhiAI_mqtt&udp/
 ├── README.MD
 ```
 
-## Solution Framework
+##  方案框架
 
 <img src="./media/software.png" style="zoom: 100%;" />
 
 <img src="./media/flow.png" style="zoom:100%;" />
 
-## Features
+## 功能特性
 
-- Supports voice interruption.
-- Supports keyword voice wake-up.
-- Uses Python language, facilitating secondary development.
+- 支持语音中断/打断。
+- 支持关键词语音唤醒。
+- 使用 Python 语言，便于二次开发。
 
-## Quick Start
+## 快速开始
 
-### Prerequisites
+### 先决条件
 
-Before you start, make sure you have the following prerequisites:
+在开始之前，请确保您具备以下先决条件：
 
-- Hardware:
-  - Contact Quectel official to obtain the AI development board and accessories.
-  - Computer (Windows 7, Windows 10 or Windows 11)
-  - Speaker
-    - Any speaker with 2-5W power is acceptable
-    - [QuecMall purchase link](https://www.quecmall.com/goods-detail/2c90800c94028da201948249e9f4012d)
-- Software:
-  - Debugging tool [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
-  - QuecPython firmware (beta firmware is available in the fw directory of the repository)
-  - Python text editor (e.g., [VSCode](https://code.visualstudio.com/), [Pycharm](https://www.jetbrains.com/pycharm/download/))
+- **硬件：**
+  - 联系移远官方获取 AI 开发板及配件。
+  - 电脑（Windows 7、Windows 10 或 Windows 11）
+  - 喇叭
+    - 任意 2-5W 功率的喇叭即可
+    - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c94028da201948249e9f4012d)
+  
+- **软件：**
+  - 调试工具 [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
+  - QuecPython 固件（仓库 fw 目录下有 beta 固件）
+  - Python 文本编辑器（例如，[VSCode](https://code.visualstudio.com/)、[Pycharm](https://www.jetbrains.com/pycharm/download/)）
 
-### Installation
+### 安装
 
-1. **Clone the repository**:
-
+1. **克隆仓库**：
    ```bash
    git clone https://github.com/QuecPython/solution-xiaozhiAI.git
    ```
+   
+3. **烧录固件：**
+   按照[说明](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6)将固件烧录到开发板上。
 
-2. **Burn the firmware**:
-   Burn the firmware to the development board according to the [instructions](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#下载固件).
+### 运行应用程序
 
-### Run the Application
-
-1. **Connect hardware**:
-   This case uses Quectel AI development board. Please contact the official for it if needed. Connect the hardware as shown in the following figure:
-
+1. **连接硬件：**
+   本案例采用移远 AI 开发板，如有需要请联系官方获取。按照下图进行硬件连接：
+   
    <img src="./media/20250425131903.jpg" style="zoom:80%;" />
+   
+   1.  连接喇叭
+   2. 连接天线
+   3. 接入电池
+4. 通过 Tpye-C 连接上位机
+   
+2. **将代码下载到设备：**
+   - 启动 QPYcom 调试工具。
+   - 将数据线连接到计算机。
+   - 按下开发板上的 **PWRKEY** 按钮启动设备。
+   - 按照[说明](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/first_python.html#PC%E4%B8%8E%E6%A8%A1%E7%BB%84%E9%97%B4%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93)将 `code` 文件夹中的所有文件导入到模块的文件系统中，保留目录结构。
 
-   1. Connect the speaker
-   2. Connect the antenna
-   3. Connect the battery
-
-2. Connect to the host computer via Type-C
-
-3. **Download the code to the device**:
-
-   - Launch the QPYcom debugging tool.
-   - Connect the data cable to the computer.
-   - Press the **PWRKEY** button on the development board to start the device.
-   - Import all files in the `code` folder into the module's file system while retaining the directory structure according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/first_python.html#PC与模组间的文件传输).
-
-4. **Run the application**:
-
-   - Select the `File` tab.
-   - Select the `_main.py` script.
-   - Right-click and select `Run` or use the `Run` shortcut button to execute the script.
-
-5. **After waking up with the keyword, you can start a conversation. Refer to the running log**:
+3. **运行应用程序：**
+   
+   - 选择 `File` 选项卡。
+   - 选择 `_main.py` 脚本。
+   - 右键单击并选择 `Run` 或使用`运行`快捷按钮执行脚本。
+   
+4. **关键词唤醒后，即可对话， 参考运行日志：**
 
    ![](./media/20250425132727.png)
 
-6. Refer to the usage example video: `media/example_video.mp4`
+5. 参考使用示例视频：`media/example_video.mp4`
 
-## Contributing
+## 贡献
 
-We welcome contributions to improve this project! Please follow these steps to contribute:
+我们欢迎对本项目的改进做出贡献！请按照以下步骤进行贡献：
 
-1. Fork this repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a Pull Request.
+1. Fork 此仓库。
+2. 创建一个新分支（`git checkout -b feature/your-feature`）。
+3. 提交您的更改（`git commit -m 'Add your feature'`）。
+4. 推送到分支（`git push origin feature/your-feature`）。
+5. 打开一个 Pull Request。
 
-## License
+## 许可证
 
-This project is licensed under the Apache License. For details, please refer to the [LICENSE](https://www.doubao.com/chat/LICENSE) file.
+本项目使用 Apache 许可证。详细信息请参阅 [LICENSE](LICENSE) 文件。
 
-## Support
+## 支持
 
-If you have any questions or need support, please refer to the [QuecPython documentation](https://developer.quectel.com/doc/quecpython/) or open an issue in this repository.
+如果您有任何问题或需要支持，请参阅 [QuecPython 文档](https://developer.quectel.com/doc/quecpython/) 或在本仓库中打开一个 issue。
