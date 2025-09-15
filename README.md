@@ -87,6 +87,7 @@ solution-xiaozhiAI_mqtt&udp/
    1.  连接喇叭
    2. 连接天线
    3. 接入电池
+   
 4. 通过 Tpye-C 连接上位机
    
 2. **将代码下载到设备：**
@@ -104,8 +105,6 @@ solution-xiaozhiAI_mqtt&udp/
 4. **关键词唤醒后，即可对话， 参考运行日志：**
 
    ![](./media/20250425132727.png)
-
-5. 参考使用示例视频：`media/example_video.mp4`
 
 ## 贡献
 

@@ -107,8 +107,6 @@ Before you start, make sure you have the following prerequisites:
 
    ![](./media/20250425132727.png)
 
-6. Refer to the usage example video: `media/example_video.mp4`
-
 ## Contributing
 
 We welcome contributions to improve this project! Please follow these steps to contribute:
