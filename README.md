@@ -60,7 +60,7 @@ solution-xiaozhiAI_mqtt&udp/
   - 电脑（Windows 7、Windows 10 或 Windows 11）
   - 喇叭
     - 任意 2-5W 功率的喇叭即可
-    - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c94028da201948249e9f4012d)
+    - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800b9488359c0195efe6367303b5)
   
 - **软件：**
   - 调试工具 [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
@@ -71,7 +71,7 @@ solution-xiaozhiAI_mqtt&udp/
 
 1. **克隆仓库**：
    ```bash
-   git clone https://github.com/QuecPython/solution-xiaozhiAI.git
+   git clone https://github.com/QuecPython/AIChatbot-Xiaozhi-Mqtt.git
    ```
    
 3. **烧录固件：**

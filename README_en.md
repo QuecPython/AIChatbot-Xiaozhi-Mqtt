@@ -60,7 +60,7 @@ Before you start, make sure you have the following prerequisites:
   - Computer (Windows 7, Windows 10 or Windows 11)
   - Speaker
     - Any speaker with 2-5W power is acceptable
-    - [QuecMall purchase link](https://www.quecmall.com/goods-detail/2c90800c94028da201948249e9f4012d)
+    - [QuecMall purchase link](https://www.quecmall.com/goods-detail/2c90800b9488359c0195efe6367303b5)
 - Software:
   - Debugging tool [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
   - QuecPython firmware (beta firmware is available in the fw directory of the repository)
@@ -71,7 +71,7 @@ Before you start, make sure you have the following prerequisites:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/QuecPython/solution-xiaozhiAI.git
+   git clone https://github.com/QuecPython/AIChatbot-Xiaozhi-Mqtt.git
    ```
 
 2. **Burn the firmware**:
