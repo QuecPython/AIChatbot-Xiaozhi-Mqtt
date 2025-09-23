@@ -219,9 +219,9 @@ class MqttClient(object):
         
     @staticmethod
     def get_mac_address():
-        # mac = str(uuid.UUID(int=int(modem.getDevImei())))[-12:]
-        # return ":".join([mac[i:i + 2] for i in range(0, 12, 2)])
-        return "64:e8:33:48:ec:c1"
+        mac = str(uuid.UUID(int=int(modem.getDevImei())))[-12:]
+        return ":".join([mac[i:i + 2] for i in range(0, 12, 2)])
+    
     def __handle_mqtt_message(self,topic,msg):
         global aes_opus_info
         msg = JsonMessage.from_bytes(msg)
