@@ -50,6 +50,7 @@ class Application(object):
         self.__keyword_spotting_event = Event()
 
         self.last_msg = None
+        self.cache = []
     def __record_thread_handler(self):
         """纯粹是为了kws&vad能识别才起的线程持续读音频"""
         logger.debug("record thread handler enter")
@@ -85,21 +86,27 @@ class Application(object):
         self.start_kws()
 
     def __chat_process(self):
-        gc.collect()
         self.start_vad()
         try:
             logger.debug("Starting chat process")
             with self.__protocol:
                 #self.__protocol.wakeword_detected("小智")
-                logger.debug("wakeword detected")
+                logger.info("connect success")
                 is_listen_flag = False
                 while True:
                     data = self.audio_manager.opus_read()
+                    if not self.__voice_activity_event.is_set() and not is_listen_flag:
+                        self.cache.append(data)
+                        if len(self.cache) > 10:
+                            self.cache.pop(0)                    
                     if self.__voice_activity_event.is_set():
                         # 有人声
                         if not is_listen_flag:
                             self.__protocol.listen("start")
                             is_listen_flag = True
+                            for data in self.cache:
+                                self.__protocol.udp_send(data)
+                            self.cache = []                            
                         self.__protocol.udp_send(data)
                     else:
                         if is_listen_flag:
@@ -132,7 +139,6 @@ class Application(object):
 
     def on_voice_activity_detection(self, state):
         logger.info("on_voice_activity_detection: {}".format(state))
-        gc.collect()
         if state == 1:
             self.__protocol.abort()
             self.__voice_activity_event.set()  # 有人声

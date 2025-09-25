@@ -49,6 +49,9 @@ class Application(object):
         self.__voice_activity_event = Event()
         self.__keyword_spotting_event = Event()
 
+        self.cache = []
+        self.last_msg = None
+
     def __record_thread_handler(self):
         """纯粹是为了kws&vad能识别才起的线程持续读音频"""
         logger.debug("record thread handler enter")
@@ -92,21 +95,24 @@ class Application(object):
         try:
             logger.debug("Starting chat process")
             with self.__protocol:
-                self.__protocol.wakeword_detected("小智")
-                logger.debug("send wakeword detected")
+                #self.__protocol.wakeword_detected("小智")
+                logger.debug("connect success")
                 is_listen_flag = False
-                count = 0
                 while True:
                     data = self.audio_manager.opus_read()
-                    count += 1
-                    if count == 15:
-                        gc.collect()
-                        count = 0
+                    if not self.__voice_activity_event.is_set() and not is_listen_flag:
+                        self.cache.append(data)
+                        if len(self.cache) > 10:
+                            self.cache.pop(0)
+                        
                     if self.__voice_activity_event.is_set():
                         # 有人声
                         if not is_listen_flag:
                             self.__protocol.listen("start")
                             is_listen_flag = True
+                            for data in self.cache:
+                                self.__protocol.udp_send(data)
+                            self.cache = []
                         self.__protocol.udp_send(data)
                     else:
                         if is_listen_flag:
@@ -139,7 +145,6 @@ class Application(object):
 
     def on_voice_activity_detection(self, state):
         logger.info("on_voice_activity_detection: {}".format(state))
-        gc.collect()
         if state == 1:
             self.__protocol.abort()
             self.__voice_activity_event.set()  # 有人声
@@ -162,8 +167,12 @@ class Application(object):
         #raise NotImplementedError("handle_mcp_message not implemented")
 
     def handle_tts_message(self, msg):
-        logger.info(msg)
-        #raise NotImplementedError("handle_tts_message not implemented")
+        try:
+            if msg["text"] != self.last_msg:
+                logger.info(msg["text"])
+                self.last_msg = msg["text"]
+        except:
+            pass
 
 #"happy" "cool"  "angry"  "think"
 # ... existing code ...
