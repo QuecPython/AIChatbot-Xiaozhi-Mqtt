@@ -94,7 +94,7 @@ solution-xiaozhiAI_mqtt&udp/
    - 启动 QPYcom 调试工具。
    - 将数据线连接到计算机。
    - 按下开发板上的 **PWRKEY** 按钮启动设备。
-   - 按照[说明](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/first_python.html#PC%E4%B8%8E%E6%A8%A1%E7%BB%84%E9%97%B4%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93)将 `code` 文件夹中的所有文件导入到模块的文件系统中，保留目录结构。
+   - 按照[说明](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/first_python.html#PC%E4%B8%8E%E6%A8%A1%E7%BB%84%E9%97%B4%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93)将 `src` 文件夹中的所有文件导入到模块的文件系统中，保留目录结构。
 
 3. **运行应用程序：**
    

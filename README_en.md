@@ -95,7 +95,7 @@ Before you start, make sure you have the following prerequisites:
    - Launch the QPYcom debugging tool.
    - Connect the data cable to the computer.
    - Press the **PWRKEY** button on the development board to start the device.
-   - Import all files in the `code` folder into the module's file system while retaining the directory structure according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/first_python.html#Write-Your-First-Script-File).
+   - Import all files in the `src` folder into the module's file system while retaining the directory structure according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/first_python.html#Write-Your-First-Script-File).
 
 4. **Run the application**:
 
