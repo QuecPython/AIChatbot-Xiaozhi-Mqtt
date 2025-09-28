@@ -62,7 +62,7 @@ Before you start, make sure you have the following prerequisites:
     - Any speaker with 2-5W power is acceptable
     - [QuecMall purchase link](https://www.quecmall.com/goods-detail/2c90800b9488359c0195efe6367303b5)
 - Software:
-  - Debugging tool [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
+  - Debugging tool [QPYcom](https://developer.quectel.com/wp-content/uploads/2024/09/QPYcom_V3.9.0.zip)
   - QuecPython firmware (beta firmware is available in the fw directory of the repository)
   - Python text editor (e.g., [VSCode](https://code.visualstudio.com/), [Pycharm](https://www.jetbrains.com/pycharm/download/))
 
@@ -75,7 +75,7 @@ Before you start, make sure you have the following prerequisites:
    ```
 
 2. **Burn the firmware**:
-   Burn the firmware to the development board according to the [instructions](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#下载固件).
+   Burn the firmware to the development board according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/flash_firmware.html#Flash-Firmware).
 
 ### Run the Application
 
@@ -95,7 +95,7 @@ Before you start, make sure you have the following prerequisites:
    - Launch the QPYcom debugging tool.
    - Connect the data cable to the computer.
    - Press the **PWRKEY** button on the development board to start the device.
-   - Import all files in the `code` folder into the module's file system while retaining the directory structure according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/first_python.html#PC与模组间的文件传输).
+   - Import all files in the `code` folder into the module's file system while retaining the directory structure according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/first_python.html#Write-Your-First-Script-File).
 
 4. **Run the application**:
 

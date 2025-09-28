@@ -63,7 +63,7 @@ solution-xiaozhiAI_mqtt&udp/
     - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800b9488359c0195efe6367303b5)
   
 - **软件：**
-  - 调试工具 [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
+  - 调试工具 [QPYcom](https://developer.quectel.com/wp-content/uploads/2024/09/QPYcom_V3.9.0.zip)
   - QuecPython 固件（仓库 fw 目录下有 beta 固件）
   - Python 文本编辑器（例如，[VSCode](https://code.visualstudio.com/)、[Pycharm](https://www.jetbrains.com/pycharm/download/)）
 
@@ -75,7 +75,7 @@ solution-xiaozhiAI_mqtt&udp/
    ```
    
 3. **烧录固件：**
-   按照[说明](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6)将固件烧录到开发板上。
+   按照[说明](https://developer.quectel.com/doc/quecpython/Getting_started/zh/4G/flash_firmware.html#%E7%83%A7%E5%BD%95%E5%9B%BA%E4%BB%B6)将固件烧录到开发板上。
 
 ### 运行应用程序
 
